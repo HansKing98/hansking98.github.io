@@ -4,7 +4,7 @@
   /* 主蓝色，按钮，社交图标 */
   --primary-color: #45aaf2;
   /* 主蓝色，深，导航 */
-  --primary-dark-color:#1e90ff;
+  --primary-dark-color: #1e90ff;
   --text-color-gray: #8b979f;
   --text-color-light-gray: #61b7f5;
   --text-color-dark-gray: #5a6f7c;
@@ -114,11 +114,13 @@ nav .indicator {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 /* 名字 */
 .title h1 {
   font-size: 2em;
   font-weight: 500;
 }
+
 /* 身份 */
 .title p {
   color: var(--text-color-gray);
@@ -175,6 +177,7 @@ footer .fab {
   color: var(--primary-color);
   font-size: 24px;
 }
+
 /* ********************************* */
 
 /* 工作经历，一共3条工作经历，所以创建了3行栅格布局 */
@@ -198,6 +201,7 @@ footer .fab {
   font-size: 18px;
   font-weight: 500;
 }
+
 /* 分隔线 */
 .seperator {
   height: 43px;
@@ -216,4 +220,61 @@ footer .fab {
   color: var(--text-color-dark-gray);
   margin-top: 9px;
   letter-spacing: 0;
+}
+
+
+@media (max-width: 900px) {
+  * {
+    font-size: 16px;
+  }
+
+  .profile-card {
+    /* 12格栅格 */
+    grid-template-columns: repeat(7, 1fr);
+    /* 每个列之间的空隙是12px */
+    column-gap: 12px;
+    /* 卡片总宽度为627px */
+    width: 100vw;
+    /* 卡片总高度为374px */
+    height: 400px;
+    box-shadow: none;
+  }
+
+  .content {
+    /* 左边内容占7列 */
+    grid-column: 1 / 8;
+    padding: 38px 33px;
+    position: relative;
+  }
+
+  .follow-btn,
+  .seperator,
+  .pos2,
+  aside {
+    display: none;
+  }
+
+  .active-section {
+    padding-right: 33px;
+  }
+
+  .work-exps {
+    grid-template-rows: 100px 20px auto 40px;
+  }
+
+  .work-exp-item {
+    display: grid;
+    /* 列之间的比例 */
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .time {
+    font-size: 20px;
+  }
+
+  .company {
+    font-size: 18px;
+  }
 }
